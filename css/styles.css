@@ -19,6 +19,10 @@
 /* Scroll Snapping */
 /* https://24ways.org/2019/beautiful-scrolling-experiences-without-libraries/ */
 @supports (scroll-snap-type: y mandatory) {
+    html {
+        scroll-behavior: smooth;
+    }
+
     main {
         height: 93.2vh;
         overflow-y: scroll;
@@ -28,8 +32,18 @@
 
     section {
         height: 100vh;
-        scroll-snap-align: center;
+        scroll-snap-align: start;
     }
+}
+
+/* Section Animation */
+.section-visible div {
+    animation: fadeIn ease 1s;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
 }
 
 /* Section Backgrounds */

@@ -6,20 +6,18 @@ document.addEventListener('DOMContentLoaded', () => {
         threshold: 0.25
     };
 
-    const callback = (entries, observer) => {
+    const intersectionCallback = (entries, observer) => {
         entries.forEach((entry) => {
-            const { target } = entry;
-
             if (entry.intersectionRatio >= 0.25) {
-                target.classList.add('is-visible');
+                entry.target.classList.add('section-visible');
             }
             else {
-                target.classList.remove('is-visible');
+                entry.target.classList.remove('section-visible');
             }
         });
     };
 
-    const observer = new IntersectionObserver(callback, options);
+    const observer = new IntersectionObserver(intersectionCallback, options);
 
     sections.forEach((section, index) => {
 
