@@ -1,4 +1,6 @@
-/* Font Styles */
+/******************************************************************************
+    Font Styles
+/*****************************************************************************/
 .bold {
     font-weight: bold;
 }
@@ -11,13 +13,17 @@
     text-decoration: underline;
 }
 
-/* Navbar */
+/******************************************************************************
+    Navbar
+/*****************************************************************************/
 .nav-logo {
     margin-left: 1rem;
 }
 
-/* Scroll Snapping */
-/* https://24ways.org/2019/beautiful-scrolling-experiences-without-libraries/ */
+/******************************************************************************
+    Scroll Snapping
+    https://24ways.org/2019/beautiful-scrolling-experiences-without-libraries/
+/*****************************************************************************/
 @supports (scroll-snap-type: y mandatory) {
     html {
         scroll-behavior: smooth;
@@ -36,7 +42,9 @@
     }
 }
 
-/* Section Animation */
+/******************************************************************************
+    Section Animation
+/*****************************************************************************/
 .section-visible div {
     animation: fadeIn ease 1s;
 }
@@ -46,7 +54,9 @@
     100% { opacity: 1; }
 }
 
-/* Section Backgrounds */
+/******************************************************************************
+    Section Backgrounds
+/*****************************************************************************/
 #erc-section {
     /* background-image: url(https://images.unsplash.com/photo-1562545876-e21ffc54d4ee?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1403&q=80); */
     /* background-image: url(https://images.unsplash.com/photo-1583133269464-b721db5345f4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=636&q=80); */
@@ -87,4 +97,101 @@
     /* background-image: url(https://images.pexels.com/photos/34592/pexels-photo.jpg?cs=srgb&dl=pexels-negative-space-34592.jpg&fm=jpg); */
     background-image: url(../images/Background/Library-Books.jpg);
     background-size: cover;
+}
+
+/******************************************************************************
+    Page Layouts
+/*****************************************************************************/
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/**************************************
+    Mobile Styles
+**************************************/
+@media screen and (min-width: 1px) {
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: repeat(4, minmax(20px, auto));
+        max-width: 900px;
+        padding: 24px;
+        background-color: white;
+        box-shadow: 0px 1px 5px #555;
+    }
+    
+    .grid-item {
+        padding: 0.75em;
+    }
+    
+    .grid-image {
+        grid-column: 1 / 3;
+        grid-row: 1 / 2;
+        align-self: center;
+    }
+    
+    .grid-header {
+        grid-column: 3 / 13;
+        grid-row: 1 / 2;
+        text-align: center;
+    }
+    
+    .sub-header {
+        display: flex;
+        justify-content: space-around;
+    }
+    
+    .grid-main {
+        grid-column: 1 / 13;
+        grid-row: 2 / 5;
+    }
+}
+
+/**************************************
+    Desktop Styles
+**************************************/
+@media screen and (min-width: 1200px) {
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: repeat(4, minmax(20px, auto));
+        max-width: 1280px;
+        padding: 24px;
+        background-color: white;
+        box-shadow: 0px 1px 5px #555;
+    }
+    
+    .grid-item {
+        padding: 0.75em;
+    }
+    
+    .grid-image {
+        grid-column: 1 / 3;
+        grid-row: 1 / 5;
+        align-self: center;
+    }
+    
+    .grid-header {
+        grid-column: 3 / 13;
+        grid-row: 1 / 2;
+        text-align: center;
+    }
+    
+    .sub-header {
+        display: flex;
+        justify-content: space-around;
+    }
+    
+    .grid-main {
+        grid-column: 3 / 13;
+        grid-row: 2 / 5;
+    }
+}
+
+/* TEST */
+.responsive-img {
+    max-width: 100%;
+    height: auto;
 }
