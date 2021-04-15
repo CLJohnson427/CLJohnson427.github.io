@@ -23,6 +23,7 @@ body {
 :root {
     --primary-background: #fff;
     --secondary-background: #fff;
+    --primary-icon-color: #212121;
     --image-background: #fff;
     --primary-font-color: #212121;
     --secondary-font-color: #717171;
@@ -32,6 +33,7 @@ body {
 :root.dark-theme {
     --primary-background: #18202f;
     --secondary-background: #283245;
+    --primary-icon-color: #fbfbfb;
     --image-background: #fff;
     --primary-font-color: #fbfbfb;
     --secondary-font-color: #c8c8c8;
@@ -69,31 +71,48 @@ html {
     flex-wrap: wrap;
     padding: 0.75rem
 }
-.navbar h1 {
+.navbar .nav-title {
     display: flex;
     justify-content: center;
-    width: 90%;
+    width: 100%;
 }
-.navbar span.material-icons {
+.navbar .nav-icons {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
+    color: var(--primary-icon-color);
+    padding: 0.5rem;
+    width: 100%;
 }
-.navbar ul {
+.navbar .nav-icons a {
+    text-decoration: none;
+    text-align: center;
+    color: var(--primary-icon-color);
+    display: flex;
+}
+.navbar .nav-icon {
+    width: 1.6rem;
+    height: 1.6rem;
+    margin: 0rem 0.5rem;
+}
+.navbar .nav-icon:hover {
+    cursor: pointer;
+}
+.navbar .nav-links {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     list-style: none;
     width: 100%
 }
-.navbar a {
+.navbar .nav-links a {
     text-decoration: none;
     text-align: center;
     color: var(--secondary-font-color);
     display: flex;
     padding: 0.5rem;
 }
-.navbar a:hover {
+.navbar .nav-links a:hover {
     color: var(--active-font-color);
 }
 
@@ -177,8 +196,11 @@ html {
     /**********************************************************
         Navbar
     /*********************************************************/
-    .navbar h1 {
-        width: 95%;
+    .navbar .nav-title {
+        width: 90%;
+    }
+    .navbar .nav-icons {
+        width: 10%;
     }
     /**********************************************************
         Section Title
