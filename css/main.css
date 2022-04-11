@@ -1,244 +1,244 @@
 /******************************************************************************
-    Style Reset, Themes, Variables, and Font Styles.
+  Style Reset, Themes, Variables, and Font Styles.
 /*****************************************************************************/
 body, p, a, ul, li {
-    margin: 0;
-    padding: 0;
-    text-decoration: none;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
 }
 *, *::before, *::after {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 body {
-    max-width: 1200px;
-    margin: 0px auto;
-    padding: 0rem 1rem;
-    background-color: var(--primary-background);
-    color: var(--primary-font-color);
+  max-width: 1200px;
+  margin: 0px auto;
+  padding: 0rem 1rem;
+  background-color: var(--primary-background);
+  color: var(--primary-font-color);
 }
 
 /**********************************************************
-    Themes & Variables
+  Themes & Variables
 /*********************************************************/
 :root {
-    --primary-background: #fff;
-    --secondary-background: #fff;
-    --primary-icon-color: #212121;
-    --image-background: #fff;
-    --primary-font-color: #212121;
-    --secondary-font-color: #717171;
-    --active-font-color: #3f3f3f;
-    --accent-color: #e6e9ed;
+  --primary-background: #fff;
+  --secondary-background: #fff;
+  --primary-icon-color: #212121;
+  --image-background: #fff;
+  --primary-font-color: #212121;
+  --secondary-font-color: #717171;
+  --active-font-color: #3f3f3f;
+  --accent-color: #e6e9ed;
 }
 :root.dark-theme {
-    --primary-background: #18202f;
-    --secondary-background: #283245;
-    --primary-icon-color: #fbfbfb;
-    --image-background: #fff;
-    --primary-font-color: #fbfbfb;
-    --secondary-font-color: #c8c8c8;
-    --active-font-color: #e3e3e3;
-    --accent-color: #00b3f4;
+  --primary-background: #18202f;
+  --secondary-background: #283245;
+  --primary-icon-color: #fbfbfb;
+  --image-background: #fff;
+  --primary-font-color: #fbfbfb;
+  --secondary-font-color: #c8c8c8;
+  --active-font-color: #e3e3e3;
+  --accent-color: #00b3f4;
 }
 
 /**********************************************************
-    Font Styles
+  Font Styles
 /*********************************************************/
 html {
-    line-height: 1.5;
-    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
-    font-weight: normal;
-    font-size: 15px;
+  line-height: 1.5;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+  font-weight: normal;
+  font-size: 15px;
 }
 .bold {
-    font-weight: bold;
+  font-weight: bold;
 }
 .italic {
-    font-style: italic;
+  font-style: italic;
 }
 .underline {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 /******************************************************************************
-    Animation
+  Animation
 /*****************************************************************************/
 * {
-    /* Transition when switching betweem Light/Dark Themes. */
-    transition: background-color 0.5s ease, color 0.5s ease;
+  /* Transition when switching betweem Light/Dark Themes. */
+  transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 .section-visible div {
-    animation: fadeIn ease 1s;
+  animation: fadeIn ease 1s;
 }
 
 @keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
 
 /******************************************************************************
-    Mobile Styles
+  Mobile Styles
 /*****************************************************************************/
 /**********************************************************
-    Navbar
+  Navbar
 /*********************************************************/
 .navbar {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 0.75rem
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0.75rem
 }
 .navbar .nav-title {
-    display: flex;
-    justify-content: center;
-    width: 100%;
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 .navbar .nav-icons {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    color: var(--primary-icon-color);
-    padding: 0.5rem;
-    width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  color: var(--primary-icon-color);
+  padding: 0.5rem;
+  width: 100%;
 }
 .navbar .nav-icons a {
-    text-decoration: none;
-    text-align: center;
-    color: var(--primary-icon-color);
-    display: flex;
+  text-decoration: none;
+  text-align: center;
+  color: var(--primary-icon-color);
+  display: flex;
 }
 .navbar .nav-icon {
-    width: 1.6rem;
-    height: 1.6rem;
-    margin: 0rem 0.5rem;
+  width: 1.6rem;
+  height: 1.6rem;
+  margin: 0rem 0.5rem;
 }
 .navbar .nav-icon:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 .navbar .nav-links {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    list-style: none;
-    width: 100%
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  list-style: none;
+  width: 100%
 }
 .navbar .nav-links a {
-    text-decoration: none;
-    text-align: center;
-    color: var(--secondary-font-color);
-    display: flex;
-    padding: 0.5rem;
+  text-decoration: none;
+  text-align: center;
+  color: var(--secondary-font-color);
+  display: flex;
+  padding: 0.5rem;
 }
 .navbar .nav-links a:hover {
-    color: var(--active-font-color);
+  color: var(--active-font-color);
 }
 
 /**********************************************************
-    Section Title
+  Section Title
 /*********************************************************/
 .section-title {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    padding: 1rem;
-    border-bottom: 0.1rem solid var(--secondary-font-color);
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 1rem;
+  border-bottom: 0.1rem solid var(--secondary-font-color);
 }
 
 /**********************************************************
-    Card Containers
+  Card Containers
 /*********************************************************/
 .card-container {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(4, minmax(1rem, auto));
-    margin: 3rem 0rem;
-    padding: 2.5rem 2rem;
-    background-color: var(--secondary-background);
-    box-shadow: 0px 3px 10px 0 rgba(0, 0, 0, 0.4);
-    border-radius: 0.5rem;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(4, minmax(1rem, auto));
+  margin: 3rem 0rem;
+  padding: 2.5rem 2rem;
+  background-color: var(--secondary-background);
+  box-shadow: 0px 3px 10px 0 rgba(0, 0, 0, 0.4);
+  border-radius: 0.5rem;
 }
 .card-item {
-    padding: 0.75rem;
+  padding: 0.75rem;
 }
 .card-image {
-    grid-column: 1 / 13;
-    grid-row: 1 / 2;
-    align-self: center;
-    justify-self: center;
-    background-color: var(--image-background);
-    padding: 0.5rem;
+  grid-column: 1 / 13;
+  grid-row: 1 / 2;
+  align-self: center;
+  justify-self: center;
+  background-color: var(--image-background);
+  padding: 0.5rem;
 }
 .card-header {
-    grid-column: 1 / 13;
-    grid-row: 2 / 3;
-    text-align: center;
-    background-color: var(--secondary-background);
+  grid-column: 1 / 13;
+  grid-row: 2 / 3;
+  text-align: center;
+  background-color: var(--secondary-background);
 }
 /* .card-title {
-    padding-bottom: 0.5rem;
-    border-bottom: solid 2px var(--accent-color);
+  padding-bottom: 0.5rem;
+  border-bottom: solid 2px var(--accent-color);
 } */
 .sub-header {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    padding: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 0.5rem;
 }
 .sub-header div {
-    padding: 0.25rem;
+  padding: 0.25rem;
 }
 .card-main {
-    grid-column: 1 / 13;
-    grid-row: 3 / 5;
-    background-color: var(--secondary-background);
+  grid-column: 1 / 13;
+  grid-row: 3 / 5;
+  background-color: var(--secondary-background);
 }
 .card-main ul {
-    padding-left: 1.25rem;
-    list-style-position: inside;
-    border-left: solid 2px var(--accent-color);
+  padding-left: 1.25rem;
+  list-style-position: inside;
+  border-left: solid 2px var(--accent-color);
 }
 
 /**********************************************************
-    Images
+  Images
 /*********************************************************/
 .responsive-image {
-    max-width: 100%;
-    height: auto;
+  max-width: 100%;
+  height: auto;
 }
 
 /******************************************************************************
-    Large Tablets, Laptops, and Desktop Styles
+  Large Tablets, Laptops, and Desktop Styles
 /*****************************************************************************/
 @media screen and (min-width: 960px) {
-    /**********************************************************
-        Navbar
-    /*********************************************************/
-    .navbar .nav-title {
-        width: 90%;
-    }
-    .navbar .nav-icons {
-        width: 10%;
-    }
-    /**********************************************************
-        Section Title
-    /*********************************************************/
-    .section-title {
-        justify-content: flex-start;
-    }
+  /**********************************************************
+    Navbar
+  /*********************************************************/
+  .navbar .nav-title {
+    width: 90%;
+  }
+  .navbar .nav-icons {
+    width: 10%;
+  }
+  /**********************************************************
+    Section Title
+  /*********************************************************/
+  .section-title {
+    justify-content: flex-start;
+  }
 
-    /**********************************************************
-        Card Containers
-    /*********************************************************/
-    .card-image {
-        grid-column: 1 / 3;
-        grid-row: 1 / 5;
-    }
-    .card-header {
-        grid-column: 3 / 13;
-        grid-row: 1 / 2;
-    }
-    .card-main {
-        grid-column: 3 / 13;
-        grid-row: 2 / 5;
-    }
+  /**********************************************************
+    Card Containers
+  /*********************************************************/
+  .card-image {
+    grid-column: 1 / 3;
+    grid-row: 1 / 5;
+  }
+  .card-header {
+    grid-column: 3 / 13;
+    grid-row: 1 / 2;
+  }
+  .card-main {
+    grid-column: 3 / 13;
+    grid-row: 2 / 5;
+  }
 }
