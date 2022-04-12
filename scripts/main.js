@@ -1,13 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Apply Dark Theme on page load based on user preference.
+  // Apply Dark/Light Theme on page load based on user preference.
   if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
     applyDarkTheme();
+  }
+  else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+    applyLightTheme();
   }
 
   // Toggle Dark/Light Theme if the user preference changes.
   window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (event) => {
-    const preferedTheme = event.matches ? 'dark' : 'light';
-    if (preferedTheme === 'dark') {
+    const preferredTheme = event.matches ? 'dark' : 'light';
+    if (preferredTheme === 'dark') {
       applyDarkTheme();
     }
     else {
