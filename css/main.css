@@ -65,7 +65,7 @@ html {
 /*****************************************************************************/
 * {
   /* Transition when switching betweem Light/Dark Themes. */
-  transition: background-color 0.5s ease, color 0.5s ease;
+  transition: color 50ms ease, background-color 500ms linear;
 }
 
 .section-visible div {
