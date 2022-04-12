@@ -3,9 +3,9 @@ document.addEventListener('DOMContentLoaded', () => {
   if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
     applyDarkTheme();
   }
-  else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
-    applyLightTheme();
-  }
+  // else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+  //   applyLightTheme();
+  // }
 
   // Toggle Dark/Light Theme if the user preference changes.
   window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (event) => {
