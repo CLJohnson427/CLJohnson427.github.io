@@ -203,6 +203,14 @@ section {
   list-style-position: inside;
   border-left: solid 2px var(--accent-color);
 }
+.card-link {
+  color: var(--primary-font-color);
+  text-decoration: none;
+}
+.card-link:hover {
+  color: var(--primary-font-color);
+  text-decoration: underline;
+}
 
 /**********************************************************
   Images
