@@ -1,41 +1,45 @@
 document.addEventListener('DOMContentLoaded', () => {
   // Apply Dark/Light Theme on page load based on user preference.
   if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    applyDarkTheme();
+    applyTheme('dark')
   }
   else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
-    applyLightTheme();
+    applyTheme('light')
   }
 
   // Toggle Dark/Light Theme if the user preference changes.
   window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (event) => {
-    const preferredTheme = event.matches ? 'dark' : 'light';
+    const preferredTheme = event.matches ? 'dark' : 'light'
     if (preferredTheme === 'dark') {
-      applyDarkTheme();
+      applyTheme('dark')
     }
     else {
-      applyLightTheme();
+      applyTheme('light')
     }
-  });
+  })
     
   // Toggle Dark/Light Theme.
-  const themeToggle = document.querySelector('#theme-toggle');
+  const themeToggle = document.querySelector('#theme-toggle')
   themeToggle.addEventListener('click', () => {
-    if (document.documentElement.classList.contains('dark-theme')) {
-      applyLightTheme();
+    if (document.documentElement.dataset.theme === 'dark') {
+      applyTheme('light')
     }
     else {
-      applyDarkTheme();
+      applyTheme('dark')
     }
-  });
-    
-  function applyDarkTheme() {
-    document.documentElement.classList.add('dark-theme');
-    document.querySelector('#theme-toggle').textContent = 'brightness_high';
-  }
+  })
 
-  function applyLightTheme() {
-    document.documentElement.classList.remove('dark-theme');
-    document.querySelector('#theme-toggle').textContent = 'brightness_4';
+  function applyTheme(theme) {
+    document.documentElement.dataset.theme = theme
+
+    switch (theme) {
+      case 'dark':
+        document.querySelector('#theme-toggle').textContent = 'brightness_high'
+        break
+      case 'light':
+      default:
+        document.querySelector('#theme-toggle').textContent = 'brightness_4'
+        break
+    }
   }
-});
+})
