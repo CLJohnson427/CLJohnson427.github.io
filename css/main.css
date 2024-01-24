@@ -13,33 +13,106 @@ body {
   max-width: 1200px;
   margin: 0px auto;
   padding: 0rem 1rem;
-  background-color: var(--primary-background);
-  color: var(--primary-font-color);
+  background-color: var(--background-primary);
+  color: var(--text-primary);
 }
 
 /**********************************************************
   Themes & Variables
 /*********************************************************/
 :root {
-  --primary-background: #fff;
-  --secondary-background: #fff;
-  --primary-icon-color: #212121;
-  --image-background: #fff;
-  --primary-font-color: #212121;
-  --secondary-font-color: #717171;
-  --active-font-color: #3f3f3f;
-  --accent-color: #e6e9ed;
+  /* Light Theme */
+  --background-primary-light: #fff;
+  --background-secondary-light: #fff;
+  --icon-color-primary-light: #212121;
+  --image-background-light: #fff;
+  --text-primary-light: #212121;
+  --text-secondary-light: #717171;
+  --text-active-light: #3f3f3f;
+  --accent-color-primary-light: #e6e9ed;
+
+  /* Dark Theme */
+  --background-primary-dark: #191b22;
+  --background-secondary-dark: #282c37;
+  --icon-color-primary-dark: #fbfbfb;
+  --image-background-dark: #fff;
+  --text-primary-dark: #fbfbfb;
+  --text-secondary-dark: #c8c8c8;
+  --text-active-dark: #e3e3e3;
+  --accent-color-primary-dark: #00b3f4;
+
+  /* Blue Theme */
+  --background-primary-blue: #18202f;
+  --background-secondary-blue: #283245;
+  --icon-color-primary-blue: #fbfbfb;
+  --image-background-blue: #fff;
+  --text-primary-blue: #fbfbfb;
+  --text-secondary-blue: #c8c8c8;
+  --text-active-blue: #e3e3e3;
+  --accent-color-primary-blue: #00b3f4;
+
+  /* Theme Variables - Default to Light Theme */
+  --background-primary: var(--background-primary-light);
+  --background-secondary: var(--background-secondary-light);
+  --icon-color-primary: var(--icon-color-primary-light);
+  --image-background: var(--image-background-light);
+  --text-primary: var(--text-primary-light);
+  --text-secondary: var(--text-secondary-light);
+  --text-active: var(--text-active-light);
+  --accent-color-primary: var(--accent-color-primary-light);
+  color-scheme: light;
 }
-:root.dark-theme {
-  --primary-background: #18202f;
-  --secondary-background: #283245;
-  --primary-icon-color: #fbfbfb;
-  --image-background: #fff;
-  --primary-font-color: #fbfbfb;
-  --secondary-font-color: #c8c8c8;
-  --active-font-color: #e3e3e3;
-  --accent-color: #00b3f4;
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-primary: var(--background-primary-dark);
+    --background-secondary: var(--background-secondary-dark);
+    --icon-color-primary: var(--icon-color-primary-dark);
+    --image-background: var(--image-background-dark);
+    --text-primary: var(--text-primary-dark);
+    --text-secondary: var(--text-secondary-dark);
+    --text-active: var(--text-active-dark);
+    --accent-color-primary: var(--accent-color-primary-dark);
+    color-scheme: dark;
+  }
 }
+
+[data-theme="light"] {
+  --background-primary: var(--background-primary-light);
+  --background-secondary: var(--background-secondary-light);
+  --icon-color-primary: var(--icon-color-primary-light);
+  --image-background: var(--image-background-light);
+  --text-primary: var(--text-primary-light);
+  --text-secondary: var(--text-secondary-light);
+  --text-active: var(--text-active-light);
+  --accent-color-primary: var(--accent-color-primary-light);
+  color-scheme: light;
+}
+
+[data-theme="dark"] {
+  --background-primary: var(--background-primary-dark);
+  --background-secondary: var(--background-secondary-dark);
+  --icon-color-primary: var(--icon-color-primary-dark);
+  --image-background: var(--image-background-dark);
+  --text-primary: var(--text-primary-dark);
+  --text-secondary: var(--text-secondary-dark);
+  --text-active: var(--text-active-dark);
+  --accent-color-primary: var(--accent-color-primary-dark);
+  color-scheme: dark;
+}
+
+[data-theme="blue"] {
+  --background-primary: var(--background-primary-blue);
+  --background-secondary: var(--background-secondary-blue);
+  --icon-color-primary: var(--icon-color-primary-blue);
+  --image-background: var(--image-background-blue);
+  --text-primary: var(--text-primary-blue);
+  --text-secondary: var(--text-secondary-blue);
+  --text-active: var(--text-active-blue);
+  --accent-color-primary: var(--accent-color-primary-blue);
+  color-scheme: dark;
+}
+
 
 /**********************************************************
   Font Styles
@@ -103,14 +176,14 @@ section {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  color: var(--primary-icon-color);
+  color: var(--icon-color-primary);
   padding: 0.5rem;
   width: 100%;
 }
 .navbar .nav-icons a {
   text-decoration: none;
   text-align: center;
-  color: var(--primary-icon-color);
+  color: var(--icon-color-primary);
   display: flex;
 }
 .navbar .nav-icon {
@@ -131,12 +204,12 @@ section {
 .navbar .nav-links a {
   text-decoration: none;
   text-align: center;
-  color: var(--secondary-font-color);
+  color: var(--text-secondary);
   display: flex;
   padding: 0.5rem;
 }
 .navbar .nav-links a:hover {
-  color: var(--active-font-color);
+  color: var(--text-active);
 }
 
 /**********************************************************
@@ -147,7 +220,7 @@ section {
   justify-content: center;
   width: 100%;
   padding: 1rem;
-  border-bottom: 0.1rem solid var(--secondary-font-color);
+  border-bottom: 0.1rem solid var(--text-secondary);
 }
 
 /**********************************************************
@@ -159,7 +232,7 @@ section {
   grid-template-rows: repeat(4, minmax(1rem, auto));
   margin: 3rem 0rem;
   padding: 2.5rem 2rem;
-  background-color: var(--secondary-background);
+  background-color: var(--background-secondary);
   box-shadow: 0px 3px 10px 0 rgba(0, 0, 0, 0.4);
   border-radius: 0.5rem;
 }
@@ -178,11 +251,11 @@ section {
   grid-column: 1 / 13;
   grid-row: 2 / 3;
   text-align: center;
-  background-color: var(--secondary-background);
+  background-color: var(--background-secondary);
 }
 /* .card-title {
   padding-bottom: 0.5rem;
-  border-bottom: solid 2px var(--accent-color);
+  border-bottom: solid 2px var(--accent-color-primary);
 } */
 .sub-header {
   display: flex;
@@ -196,19 +269,19 @@ section {
 .card-main {
   grid-column: 1 / 13;
   grid-row: 3 / 5;
-  background-color: var(--secondary-background);
+  background-color: var(--background-secondary);
 }
 .card-main ul {
   padding-left: 1.25rem;
   list-style-position: inside;
-  border-left: solid 2px var(--accent-color);
+  border-left: solid 2px var(--accent-color-primary);
 }
 .card-link {
-  color: var(--primary-font-color);
+  color: var(--text-primary);
   text-decoration: none;
 }
 .card-link:hover {
-  color: var(--primary-font-color);
+  color: var(--text-primary);
   text-decoration: underline;
 }
 
