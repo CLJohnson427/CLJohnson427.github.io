@@ -29,7 +29,7 @@ body {
   --text-primary-light: #212121;
   --text-secondary-light: #717171;
   --text-active-light: #3f3f3f;
-  --accent-color-primary-light: #e6e9ed;
+  --accent-color-primary-light: #acacac;
 
   /* Dark Theme */
   --background-primary-dark: #191b22;
@@ -165,51 +165,51 @@ section {
 .navbar {
   display: flex;
   flex-wrap: wrap;
-  padding: 0.75rem
-}
-.navbar .nav-title {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-.navbar .nav-icons {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  color: var(--icon-color-primary);
-  padding: 0.5rem;
-  width: 100%;
-}
-.navbar .nav-icons a {
-  text-decoration: none;
-  text-align: center;
-  color: var(--icon-color-primary);
-  display: flex;
-}
-.navbar .nav-icon {
-  width: 1.6rem;
-  height: 1.6rem;
-  margin: 0rem 0.5rem;
-}
-.navbar .nav-icon:hover {
-  cursor: pointer;
-}
-.navbar .nav-links {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  list-style: none;
-  width: 100%
-}
-.navbar .nav-links a {
-  text-decoration: none;
-  text-align: center;
-  color: var(--text-secondary);
-  display: flex;
-  padding: 0.5rem;
-}
-.navbar .nav-links a:hover {
-  color: var(--text-active);
+  padding: 0.75rem;
+  & .nav-title {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  & .nav-icons {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    color: var(--icon-color-primary);
+    padding: 0.5rem;
+    width: 100%;
+    & a {
+      text-decoration: none;
+      text-align: center;
+      color: var(--icon-color-primary);
+      display: flex;
+    }
+  }
+  & .nav-icon {
+    width: 1.6rem;
+    height: 1.6rem;
+    margin: 0rem 0.5rem;
+  }
+  & .nav-icon:hover {
+    cursor: pointer;
+  }
+  & .nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    list-style: none;
+    width: 100%;
+    & a {
+      text-decoration: none;
+      text-align: center;
+      color: var(--text-secondary);
+      display: flex;
+      padding: 0.5rem;
+    }
+    & a:hover {
+      color: var(--text-active);
+    }
+  }
 }
 
 /**********************************************************
@@ -220,7 +220,11 @@ section {
   justify-content: center;
   width: 100%;
   padding: 1rem;
-  border-bottom: 0.1rem solid var(--text-secondary);
+  border-bottom: 0.15rem solid var(--accent-color-primary);
+}
+
+hr {
+  border: 0.1rem solid var(--accent-color-primary);
 }
 
 /**********************************************************
@@ -255,26 +259,26 @@ section {
 }
 /* .card-title {
   padding-bottom: 0.5rem;
-  border-bottom: solid 2px var(--accent-color-primary);
+  border-bottom: solid 0.1rem var(--accent-color-primary);
 } */
 .sub-header {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   padding: 0.5rem;
-}
-.sub-header div {
-  padding: 0.25rem;
+  & div {
+    padding: 0.25rem;
+  }
 }
 .card-main {
   grid-column: 1 / 13;
   grid-row: 3 / 5;
   background-color: var(--background-secondary);
-}
-.card-main ul {
-  padding-left: 1.25rem;
-  list-style-position: inside;
-  border-left: solid 2px var(--accent-color-primary);
+  & ul {
+    padding-left: 1.25rem;
+    list-style-position: inside;
+    border-left: solid 0.1rem var(--accent-color-primary);
+  }
 }
 .card-link {
   color: var(--text-primary);
@@ -300,11 +304,13 @@ section {
   /**********************************************************
     Navbar
   /*********************************************************/
-  .navbar .nav-title {
-    width: 90%;
-  }
-  .navbar .nav-icons {
-    width: 10%;
+  .navbar {
+    & .nav-title {
+      width: 90%;
+    }
+    & .nav-icons {
+      width: 10%;
+    }
   }
   /**********************************************************
     Section Title
