@@ -189,9 +189,9 @@ section {
     width: 1.6rem;
     height: 1.6rem;
     margin: 0rem 0.5rem;
-  }
-  & .nav-icon:hover {
-    cursor: pointer;
+    &:hover {
+      cursor: pointer;
+    }
   }
   & .nav-links {
     display: flex;
@@ -205,9 +205,9 @@ section {
       color: var(--text-secondary);
       display: flex;
       padding: 0.5rem;
-    }
-    & a:hover {
-      color: var(--text-active);
+      &:hover {
+        color: var(--text-active);
+      }
     }
   }
 }
